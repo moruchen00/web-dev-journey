@@ -270,3 +270,161 @@ Cats <strong>hate</strong> other cats.
  <meta charset="UTF-8">
 
 **注意**：注意<meta>元素是一个空元素。。
+
+
+## <style> 元素
+
+**作用**：在 HTML 内部写 CSS，控制页面样式。
+
+**位置**：通常放在 <head> 里。
+
+**例子**：
+<style>
+  body {
+    background-color: burlywood;
+  }
+</style>
+
+**注意**：里面的内容不会显示，浏览器会当作 CSS 执行。
+
+
+## 元素（element）
+
+**定义**：开始标签 + 内容 + 结束标签，合起来叫一个元素。
+
+**例子**：
+<p>你好</p> 这是一个 p 元素。
+
+**注意**：
+- 元素可以嵌套，比如 <p> 里放 <strong>。
+- 标签只是尖括号部分，元素是完整结构。
+
+## <link> 元素
+
+**作用**：链接外部资源，最常用是引入外部 CSS 文件。
+
+**位置**：放在 <head> 里。
+
+**关键属性**：
+- rel="stylesheet"：说明这是样式表
+- href="styles.css"：CSS 文件的路径
+
+**例子**：
+<link rel="stylesheet" href="styles.css">
+
+**注意**：自闭合标签，不显示在页面上。
+
+## <meta name="viewport">
+
+**作用**：让网页在手机上按屏幕实际宽度显示，不缩小成桌面版。
+
+**位置**：放在 <head> 里。
+
+**例子**：
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+**注意**：
+- width=device-width：宽度等于设备宽度
+- initial-scale=1.0：初始缩放比例为 1
+- 几乎所有响应式网页都会写这一行
+
+
+## <div> 元素
+
+**作用**：通用容器，把内容包起来，方便加样式或布局。
+
+**例子**：
+<div class="menu-item">
+  <h3>拿铁</h3>
+  <p>$4.00</p>
+</div>
+
+**注意**：
+- 没有语义，只是盒子
+- 常配合 class 使用
+- 有语义的区块优先用 <section>、<main>、<article>
+
+## id 属性
+
+**作用**：给元素起一个唯一的名字，方便 CSS 或 JavaScript 定位。
+
+**例子**：
+<div id="menu">...</div>
+
+**CSS 里选中它**：
+#menu {
+  width: 300px;
+}
+
+**注意**：
+- 一个页面里 id 必须唯一
+- 可以重复用的用 class
+
+## class 属性
+
+**作用**：给元素起一个或多个类名，方便 CSS 和 JavaScript 选中，并可以重复使用。
+
+**例子**：
+<div class="menu">...</div>
+<p class="menu-item">拿铁</p>
+
+**多个类名**：用空格分开
+<div class="menu dark">...</div>
+
+**注意**：
+- class 可以重复，多个元素可以共用同一个类名
+- 一个元素可以有多个 class
+- 和 id 不同，id 在页面里必须唯一
+
+## <article> 元素
+
+**作用**：表示一段独立、完整、可单独存在的内容。
+
+**例子**：
+<article class="item">
+  <p class="flavor">French Vanilla</p>
+  <p class="price">3.00</p>
+</article>
+
+**注意**：
+- 有语义，表示独立内容
+- 常用于博客、帖子、菜单条目、产品卡片
+- 和 <section> 的区别：article 更强调独立完整
+- 和 <div> 的区别：div 没有语义
+
+## <address> 元素
+
+**作用**：表示联系信息，比如地址、邮箱、电话。
+
+**位置**：通常放在 <footer> 里。
+
+**例子**：
+<footer>
+  <address>
+    <p>123 Free Code Camp Drive</p>
+  </address>
+</footer>
+
+**注意**：
+- 默认是斜体，可以用 font-style: normal; 去掉
+- 里面可以放 <p>、<a>
+- 语义化元素，表示联系信息
+
+## <hr> 元素
+
+**作用**：画一条水平分割线，表示内容主题的分隔。
+
+**例子**：
+<h2>Coffee</h2>
+<hr>
+<p>美式咖啡 $3.00</p>
+
+**注意**：
+- 自闭合标签，不需要 </hr>
+- 默认有灰色线、上下间距
+- 可以用 CSS 改颜色、粗细：
+  hr {
+    height: 2px;
+    background-color: brown;
+    border: none;
+  }
